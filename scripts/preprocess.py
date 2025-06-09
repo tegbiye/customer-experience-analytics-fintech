@@ -3,7 +3,6 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from textblob import TextBlob
 import pandas as pd
 
 
@@ -23,26 +22,6 @@ def load_csv(file_path):
     except Exception as e:
         print(f"Error loading CSV file: {e}")
         return []
-
-
-def preprocess_text(text):
-    """
-    Preprocess the input text by removing extra spaces and converting to lowercase.
-
-    Args:
-        text (str): The input text to preprocess.
-
-    Returns:
-        str: The preprocessed text.
-    """
-    # Remove extra spaces
-    tokens = word_tokenize(text.lower())
-    lemmatizer = WordNetLemmatizer()
-    stop_words = set(stopwords.words('english'))
-    tokens = [lemmatizer.lemmatize(
-        word) for word in tokens if word.isalnum() and word not in stop_words]
-
-    return ' '.join(tokens)
 
 
 def clean_data(df):

@@ -1,7 +1,6 @@
 import unittest
 import pandas as pd
 from unittest.mock import patch, mock_open, MagicMock
-from io import StringIO
 from datetime import datetime
 from scripts.preprocess import (
     load_csv, clean_data,
