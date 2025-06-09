@@ -46,3 +46,25 @@ This repository contains a data pipeline to download that is scraping, cleaning,
   - Store cleaned review data to the Oracle database
   - Deliver report with visualization and actionable recommendations
   
+## Getting Started
+
+1. Clone the repository
+
+ - git clone http://github.com/tegbiye/customer-experience-analytics-fintech.git
+ - cd customer-experience-analytics-fintech
+
+2. Create environment using venv
+ python -m venv .venv
+
+ - Activate the environment
+   
+   .venv\Scripts\activate
+   
+   source .venv\bin\activate
+3. Install Dependencies
+
+  pip install -r requirements.txt
+
+📜 License
+This project is licensed under the MIT License.
+Feel free to use, modify, and distribute with proper attribution.
