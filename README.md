@@ -9,11 +9,25 @@ This repository contains a data pipeline to download that is scraping, cleaning,
 
 <pre>
 |---- .github/
+|     |--- workflows
+|     |    |--- unittests.yml
 |---- notebooks/
-|     |___ README.md
+|     |--- README.md
+|     |--- collect_preprocess.py
 |---- scripts/
+|     |--- play_store_scraper.py
+|     |--- preprocess.py
 |---- data/
+|     |--- raw_data/
+|     |    |---- CBE_review.csv
+|     |    |---- BOA_review.csv
+|     |    |---- DBE_review.csv
+|     |--- cleaned_data/
+|     |    |---- cleaned_review.csv
 |---- tests/
+|     |--- __init__.py
+|     |--- test_collect_preprocess.py
+|     |--- test_play_store_scraper.py
 |---- .gitignore
 |---- requirements.txt
 |____ README.md
@@ -32,3 +46,25 @@ This repository contains a data pipeline to download that is scraping, cleaning,
   - Store cleaned review data to the Oracle database
   - Deliver report with visualization and actionable recommendations
   
+## Getting Started
+
+1. Clone the repository
+
+ - git clone http://github.com/tegbiye/customer-experience-analytics-fintech.git
+ - cd customer-experience-analytics-fintech
+
+2. Create environment using venv
+ python -m venv .venv
+
+ - Activate the environment
+   
+   .venv\Scripts\activate
+   
+   source .venv\bin\activate
+3. Install Dependencies
+
+  pip install -r requirements.txt
+
+📜 License
+This project is licensed under the MIT License.
+Feel free to use, modify, and distribute with proper attribution.
