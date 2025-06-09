@@ -9,11 +9,25 @@ This repository contains a data pipeline to download that is scraping, cleaning,
 
 <pre>
 |---- .github/
+|     |--- workflows
+|     |    |--- unittests.yml
 |---- notebooks/
-|     |___ README.md
+|     |--- README.md
+|     |--- collect_preprocess.py
 |---- scripts/
+|     |--- play_store_scraper.py
+|     |--- preprocess.py
 |---- data/
+|     |--- raw_data/
+|     |    |---- CBE_review.csv
+|     |    |---- BOA_review.csv
+|     |    |---- DBE_review.csv
+|     |--- cleaned_data/
+|     |    |---- cleaned_review.csv
 |---- tests/
+|     |--- __init__.py
+|     |--- test_collect_preprocess.py
+|     |--- test_play_store_scraper.py
 |---- .gitignore
 |---- requirements.txt
 |____ README.md
