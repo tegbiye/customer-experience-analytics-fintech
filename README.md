@@ -13,10 +13,14 @@ This repository contains a data pipeline to download that is scraping, cleaning,
 |     |    |--- unittests.yml
 |---- notebooks/
 |     |--- README.md
-|     |--- collect_preprocess.py
+|     |--- collect_preprocess.ipynb
+|     |----sentiment_thematic_analysis.ipynb
 |---- scripts/
 |     |--- play_store_scraper.py
 |     |--- preprocess.py
+|     |----sentiment_analysis.py
+|     |--- cleaned_review_data_insert.py
+|     |----dump_files.py
 |---- data/
 |     |--- raw_data/
 |     |    |---- CBE_review.csv
@@ -24,12 +28,20 @@ This repository contains a data pipeline to download that is scraping, cleaning,
 |     |    |---- DBE_review.csv
 |     |--- cleaned_data/
 |     |    |---- cleaned_review.csv
+|     |    |-----sentiment_analysis_results.csv
+|-----dumps/
+|     |----README.MD
+|     |----banks.sql (DDL and DML)
+|     |----reviews.sql (DDL and DML)
+|-----src/
+|     |----__init__.py
 |---- tests/
 |     |--- __init__.py
 |     |--- test_collect_preprocess.py
 |     |--- test_play_store_scraper.py
 |---- .gitignore
 |---- requirements.txt
+|----- LICENCE
 |____ README.md
 </pre>
 
