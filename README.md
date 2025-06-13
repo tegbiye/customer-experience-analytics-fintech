@@ -57,7 +57,20 @@ This repository contains a data pipeline to download that is scraping, cleaning,
   - Identify satisfaction drivers and pain points
   - Store cleaned review data to the Oracle database
   - Deliver report with visualization and actionable recommendations
-  
+### Sentiment and Thematic Analysis
+  Using the scripts sentiment_analysis.py
+  Go over the notebook sentiment_thenatic_analysis.ipynb
+### Store cleaned review data to the Oracle database
+  load credentials from congig/oracle.env
+  connect the database insert into database as explained in 
+  cleaned_review_data_insert.py by running 
+  ```
+  python cleaned_review_data_insert.py
+  ```
+  Then to dump the DDL and DML statements
+  ```
+  python dump_files.py
+  ```
 ## Getting Started
 
 1. Clone the repository
