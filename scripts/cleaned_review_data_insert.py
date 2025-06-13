@@ -1,5 +1,7 @@
 import cx_Oracle
 import pandas as pd
+from dotenv import dotenv_values
+ENV_PATH = "config\oracle.env"
 
 # Load your DataFrame
 # replace with actual source
@@ -14,11 +16,16 @@ df['review_date'] = pd.to_datetime(
 # Drop rows where 'processed_review' is missing (NaN or None)
 df = df.dropna(subset=['processed_review'])
 
-
+OR_CRED = dotenv_values(ENV_PATH)
 # Oracle DB connection info
-username = "bank_reviews"
-password = "Oracle123"
-dsn = "localhost:1521/XEPDB1"  # Replace with your actual PDB name
+username = OR_CRED.get('ORACLE_USER')
+password = OR_CRED.get('ORACLE_PASSWORD')
+host = OR_CRED.get('ORACLE_HOST')
+port = OR_CRED.get('ORACLE_PORT')
+# Replace with your actual PDB name
+service_name = OR_CRED.get('ORACLE_SERVICE_NAME')
+
+dsn = cx_Oracle.makedsn(host, port, service_name=service_name)
 
 # Connect to Oracle
 conn = cx_Oracle.connect(username, password, dsn)
