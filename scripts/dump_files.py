@@ -1,7 +1,19 @@
 import cx_Oracle
 import pandas as pd
+from dotenv import dotenv_values
+ENV_PATH = "config/oracle.env"
+OR_CRED = dotenv_values(ENV_PATH)
+# Oracle DB connection info
+username = OR_CRED.get('ORACLE_USER')
+password = OR_CRED.get('ORACLE_PASSWORD')
+host = OR_CRED.get('ORACLE_HOST')
+port = OR_CRED.get('ORACLE_PORT')
+# Replace with your actual PDB name
+service_name = OR_CRED.get('ORACLE_SERVICE_NAME')
 
-conn = cx_Oracle.connect("bank_reviews/Oracle123@localhost:1521/XEPDB1")
+dsn = cx_Oracle.makedsn(host, port, service_name=service_name)
+
+conn = cx_Oracle.connect(username, password, dsn)
 cursor = conn.cursor()
 
 # Dump banks
